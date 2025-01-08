@@ -1,0 +1,113 @@
+/* Tailwind imports for base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+CA+Guides&display=swap");
+
+/* --- 1. CSS Reset (Essential only) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Set base font size for rem calculations */
+}
+
+body {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--text-color-dark);
+  background-color: var(--background-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 2. Root Variables (Manage theme, colors, fonts, spacing) --- */
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --background-dark: #242424;
+  --background-light: #ffffff;
+  --text-color-dark: #f5f5f5;
+  --text-color-light: #213547;
+  --font-family: "Inter", sans-serif;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --border-radius: 8px;
+}
+
+/* --- 3. Typography (Clean & simple) --- */
+/* h1, */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin-bottom: var(--spacing-small);
+}
+
+p {
+  margin-bottom: var(--spacing-medium);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* --- 4. Utility Classes (Reusables for layout and visibility) --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-medium);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-medium);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- 5. Global Animations (Lightweight and simple) --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
